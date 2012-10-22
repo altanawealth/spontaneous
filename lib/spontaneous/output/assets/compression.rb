@@ -31,7 +31,8 @@ module Spontaneous
         end
 
         def shine_compress_string(string, format, options = {})
-          compressed = Shine::compress_string(string, format, options).force_encoding("UTF-8")
+          #compressed = Shine::compress_string(string, format, options).force_encoding("UTF-8")
+          compressed = string.force_encoding("UTF-8")
           hash = digest(compressed)
           [compressed, hash]
         end
